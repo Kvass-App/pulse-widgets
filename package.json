@@ -1,0 +1,38 @@
+{
+  "name": "@kvass/pulse-widgets",
+  "version": "0.0.0-development",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@kvass/ui": "^1.6.71",
+    "mitt": "^3.0.1",
+    "vue": "^3.5.14",
+    "vue3-carousel": "^0.17.0"
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/compiler-sfc": "^3.5.13",
+    "cz-conventional-changelog": "^3.3.0",
+    "sass": "^1.72.0",
+    "typescript": "^5.7.3",
+    "vite": "^5.1.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kvass-App/pulse-widgets.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
