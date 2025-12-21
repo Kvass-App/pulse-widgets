@@ -33,6 +33,9 @@ export default defineConfig({
         'packtivation-vipps-modal': fileURLToPath(
           new URL('./src/packtivation-vipps-modal/main.js', import.meta.url),
         ),
+        'packtivation-confirmation': fileURLToPath(
+          new URL('./src/packtivation-confirmation/main.js', import.meta.url),
+        ),
       },
     },
   },

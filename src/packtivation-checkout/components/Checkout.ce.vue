@@ -4,12 +4,24 @@ import { Icon, Button, Input, Flex } from '@kvass/ui'
 import { bus } from '../bus'
 import NumberInput from './NumberInput.ce.vue'
 
+const vippsbuttonPromise = ref(null)
+
 const shoppingCart = ref(
   JSON.parse(localStorage.getItem('freia-shopping-cart') || '[]'),
 )
 
-const handleVippsClick = () => {
-  bus.emit('vipps:open')
+const handleVippsClick = async () => {
+  // bus.emit('vipps:open')
+
+  vippsbuttonPromise.value = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve()
+    }, 2000)
+  })
+
+  await vippsbuttonPromise.value
+
+  window.location.href = '/confirmation'
 }
 
 const increaseQuantity = (id) => {
@@ -59,9 +71,13 @@ const totalPrice = computed(() => {
 watch(
   shoppingCart,
   (newValue) => {
-    console.log(newValue)
-
     localStorage.setItem('freia-shopping-cart', JSON.stringify(newValue))
+    window.dispatchEvent(
+      new CustomEvent('cart-updated', {
+        bubbles: true,
+        composed: true,
+      }),
+    )
   },
   { deep: true },
 )
@@ -202,9 +218,18 @@ watch(
 
       <Button
         variant="primary"
-        label="Betal med vipps"
+        label="Betal med"
         @click="handleVippsClick"
-      />
+        class="cart__vipps-button"
+        :promise="vippsbuttonPromise"
+      >
+        <template #icon-right>
+          <img
+            alt="vipps-ikon"
+            src="https://assets.kvass.no/6946e51ef947328eefe07f11"
+          />
+        </template>
+      </Button>
 
       <Button
         class="secondary-button"
@@ -230,10 +255,10 @@ watch(
             >Vil du kjøpe mer enn 40 stk sjokolader ta kontakt med oss.
           </span>
           <a
-            href="mailto:XX@freia.no"
+            href="mailto:freia@pulse.no"
             :style="{ fontSize: '0.75rem', color: '#E2001A' }"
           >
-            XX@freia.no
+            freia@pulse.no
           </a>
         </div>
       </div>
@@ -252,13 +277,9 @@ watch(
 
     <Button
       variant="primary"
+      class="continue-button"
       label="Fortsett å handle"
       @click="goToShop"
-      :style="{
-        backgroundColor: '#E2001A',
-        maxWidth: '250px',
-        marginTop: '1rem',
-      }"
     />
   </div>
 </template>
@@ -301,7 +322,8 @@ watch(
 
   $primary: #ff5b24;
   --k-button-primary-background: #{$primary};
-  --k-button-primary-background-hover: #{lighten($primary, 20%)};
+  --k-button-primary-background-hover: #eb4f1b;
+  --k-button-secondary-background-hover: rgba(237, 199, 0, 0.1);
 
   $breakpoint: 1024px;
 
@@ -505,6 +527,13 @@ watch(
     color: #64748b;
     font-weight: 300 !important;
   }
+
+  &__vipps-button {
+    .k-button__content {
+      align-items: end;
+      gap: 0.5rem;
+    }
+  }
 }
 
 .btn-reset {
@@ -535,6 +564,19 @@ watch(
 
   .k-button__content {
     justify-content: start;
+  }
+}
+
+.continue-button {
+  background-color: #e2001a;
+  max-width: 250px;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #9e0122 !important;
+    color: #ffffff;
+    outline: 2px solid #e3001a;
+    outline-offset: -2px;
   }
 }
 </style>

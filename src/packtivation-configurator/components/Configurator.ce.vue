@@ -9,7 +9,7 @@ const config = {
   wrapAround: true,
   snapAlign: 'start',
   mouseDrag: false,
-  touchDrag: false,
+  touchDrag: true,
 }
 
 const selectedType = ref('melkesjokolade')
@@ -78,6 +78,13 @@ watch(
   shoppingCart,
   (newValue) => {
     localStorage.setItem('freia-shopping-cart', JSON.stringify(newValue))
+
+    window.dispatchEvent(
+      new CustomEvent('cart-updated', {
+        bubbles: true,
+        composed: true,
+      }),
+    )
   },
   { deep: true },
 )
@@ -191,51 +198,49 @@ watch(
         v-if="filteredProducts.length"
       >
         <Slide
-          v-for="slide in filteredProducts"
+          v-for="(slide, index) in filteredProducts"
           :key="slide.id"
           class="configurator__carousel-slide"
         >
           <img :src="slide.image" class="configurator__carousel-image" />
+
+          <div class="configurator__carousel-info">
+            <h3 class="configurator__carousel-title">
+              {{ slide.message }}
+            </h3>
+            <p class="configurator__carousel-count">
+              Budskap {{ index + 1 }} av {{ filteredProducts.length }}
+            </p>
+          </div>
         </Slide>
       </Carousel>
 
-      <div class="configurator__carousel-info">
-        <h3 class="configurator__carousel-title">
-          {{ currentProduct.message }}
-        </h3>
-        <p class="configurator__carousel-count">
-          Budskap {{ currentSlide + 1 }} av {{ filteredProducts.length }}
-        </p>
+      <div class="configurator__carousel-controls">
+        <button @click="prev" class="configurator__carousel-btn btn-reset">
+          <span
+            class="configurator__carousel-icon configurator__carousel-icon--prev"
+          ></span>
+        </button>
 
-        <div class="configurator__carousel-controls">
-          <button @click="prev" class="configurator__carousel-btn btn-reset">
-            <!-- <img
-              src="https://assets.kvass.no/693aa04c0e3a17d84e56f0ad"
-              alt="venstre-pil"
-            /> -->
-            <span
-              class="configurator__carousel-icon configurator__carousel-icon--prev"
-            ></span>
-          </button>
-
-          <div class="configurator__carousel-dots">
-            <span
-              v-for="(slide, index) in filteredProducts"
-              :key="index"
-              :class="[
-                'configurator__dot',
-                { 'configurator__dot--active': index === currentSlide },
-              ]"
-              @click="currentSlide = index"
-            />
-          </div>
-
-          <button @click="next" class="configurator__carousel-btn btn-reset">
-            <span
-              class="configurator__carousel-icon configurator__carousel-icon--next"
-            ></span>
-          </button>
+        <div class="configurator__carousel-dots">
+          <span
+            v-for="(slide, index) in filteredProducts"
+            :key="index"
+            :class="[
+              'configurator__dot',
+              { 'configurator__dot--active': index === currentSlide },
+            ]"
+            @click="currentSlide = index"
+          />
         </div>
+
+        <span class="configurator__swipe-hint">Sveip eller trykk pilene</span>
+
+        <button @click="next" class="configurator__carousel-btn btn-reset">
+          <span
+            class="configurator__carousel-icon configurator__carousel-icon--next"
+          ></span>
+        </button>
       </div>
 
       <div class="configurator__cart-bar">
@@ -292,10 +297,10 @@ watch(
             >Vil du kjøpe mer enn 40 stk sjokolader ta kontakt med oss.</span
           >
           <a
-            href="mailto:XX@freia.no"
+            href="mailto:freia@pulse.no"
             :style="{ fontSize: '0.75rem', color: '#E2001A' }"
           >
-            XX@freia.no
+            freia@pulse.no
           </a>
         </div>
       </div>
@@ -350,7 +355,7 @@ watch(
 
   $primary: #e2001a;
   --k-button-primary-background: #{$primary};
-  --k-button-primary-background-hover: #{lighten($primary, 20%)};
+  --k-button-primary-background-hover: #9e0122;
 
   $breakpoint: 1024px;
 
@@ -466,35 +471,33 @@ watch(
     }
   }
 
-  &__product-selection {
-    // display: flex;
-    // overflow-x: scroll;
-  }
-
   &__carousel-parent {
     width: 100%;
     margin: auto;
-    // Applied from source: max-width logic
     max-width: var(--body-max-width, 100%);
   }
 
   &__carousel-slide {
-    // Applied from source: flex column layout
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px; // Kept your specific height
   }
 
   &__carousel-image {
     width: 100%;
-    // Applied from source: desktop max width logic
     max-width: var(--image-max-width-desktop, 100%);
-    object-fit: contain; // Added to prevent image distortion
+    object-fit: contain;
     height: 100%;
+
+    background-color: #fede32;
+    border-radius: 14px;
+    border: 2px solid #edc700;
+
+    @media (max-width: $breakpoint) {
+      height: auto;
+    }
   }
 
-  // Styles ported from .carousel__prev and .carousel__next
   .carousel__prev,
   .carousel__next {
     margin: 0;
@@ -502,7 +505,6 @@ watch(
     svg {
       width: 24px;
       height: 24px;
-      // Using the variable or the gold color from your design
       fill: var(--icon-color, var(--carousel-icon-color));
       scale: 1.5;
     }
@@ -513,7 +515,6 @@ watch(
     }
   }
 
-  // Specific positioning from source
   .carousel__prev {
     margin-left: -15px;
   }
@@ -607,11 +608,21 @@ watch(
       align-self: center;
       margin-left: 0;
     }
+
+    &:hover {
+      color: #ffffff;
+      outline: 2px solid #e3001a;
+      outline-offset: -2px;
+    }
   }
 
   &__carousel-info {
     text-align: center;
     margin-top: 1rem;
+
+    @media (max-width: $breakpoint) {
+      min-height: 7rem;
+    }
   }
 
   &__carousel-title {
@@ -623,8 +634,12 @@ watch(
 
   &__carousel-count {
     color: #64748b;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1rem !important;
     font-weight: 300 !important;
+
+    @media (max-width: $breakpoint) {
+      margin-bottom: 0;
+    }
   }
 
   &__carousel-controls {
@@ -638,6 +653,20 @@ watch(
     display: flex;
     gap: 0.5rem;
     align-items: center;
+
+    @media (max-width: $breakpoint) {
+      display: none;
+    }
+  }
+
+  &__swipe-hint {
+    color: #64748b;
+    font-weight: 300 !important;
+    font-size: 1rem;
+
+    @media (min-width: $breakpoint) {
+      display: none;
+    }
   }
 
   &__dot {
