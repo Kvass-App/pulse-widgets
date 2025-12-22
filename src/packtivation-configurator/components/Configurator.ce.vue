@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, reactive, watch, onMounted } from 'vue'
+import { ref, computed, reactive, watch, onMounted, nextTick } from 'vue'
 import { Icon, Button, Input, Flex } from '@kvass/ui'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import { TYPES, CATEGORIES, PRODUCTS } from '../constants'
@@ -33,11 +33,28 @@ const currentProduct = computed(() => {
   return filteredProducts.value[currentSlide.value]
 })
 
+const selectCategory = (id) => {
+  selectedCategory.value = id
+  currentSlide.value = 0
+}
+
 const prev = () => {
   if (currentSlide.value > 0) {
     currentSlide.value--
   } else {
-    currentSlide.value = filteredProducts.value.length - 1
+    const currentCategoryIndex = CATEGORIES.findIndex(
+      (c) => c.id === selectedCategory.value,
+    )
+    const newCategoryIndex =
+      currentCategoryIndex > 0
+        ? currentCategoryIndex - 1
+        : CATEGORIES.length - 1
+
+    selectedCategory.value = CATEGORIES[newCategoryIndex].id
+
+    nextTick(() => {
+      currentSlide.value = filteredProducts.value.length - 1
+    })
   }
 }
 
@@ -45,6 +62,15 @@ const next = () => {
   if (currentSlide.value < filteredProducts.value.length - 1) {
     currentSlide.value++
   } else {
+    const currentCategoryIndex = CATEGORIES.findIndex(
+      (c) => c.id === selectedCategory.value,
+    )
+    const newCategoryIndex =
+      currentCategoryIndex < CATEGORIES.length - 1
+        ? currentCategoryIndex + 1
+        : 0
+
+    selectedCategory.value = CATEGORIES[newCategoryIndex].id
     currentSlide.value = 0
   }
 }
@@ -69,10 +95,6 @@ const addToCart = () => {
     resolve()
   })
 }
-
-watch([selectedType, selectedCategory], () => {
-  currentSlide.value = 0
-})
 
 watch(
   shoppingCart,
@@ -149,7 +171,7 @@ watch(
         <div
           v-for="category in CATEGORIES"
           :key="category.id"
-          @click="selectedCategory = category.id"
+          @click="selectCategory(category.id)"
           class="configurator__category-card"
           :class="{
             'configurator__category-card--active':
@@ -487,14 +509,14 @@ watch(
     width: 100%;
     max-width: var(--image-max-width-desktop, 100%);
     object-fit: contain;
-    height: 100%;
+    aspect-ratio: 2.27 / 1;
 
     background-color: #fede32;
     border-radius: 14px;
     border: 2px solid #edc700;
 
     @media (max-width: $breakpoint) {
-      height: auto;
+      aspect-ratio: 2.24 / 1;
     }
   }
 

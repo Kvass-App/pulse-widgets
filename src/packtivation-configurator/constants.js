@@ -2,25 +2,25 @@ export const TYPES = [
   {
     id: 'melkesjokolade',
     label: 'Melkesjokolade (200 g)',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/693948b68e71ee11b9336ce2',
   },
   {
     id: 'daim',
     label: 'Smak av Daim (200 g)',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/69394bf48e71ee11b9336fdf',
   },
   {
     id: 'kvikklunsj',
     label: 'Smak av Kvikklunsj (200 g)',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/69394c078e71ee11b9336feb',
   },
   {
     id: 'firkløver',
     label: 'Firkløver (200 g)',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/69394c178e71ee11b933701a',
   },
 ]
@@ -57,7 +57,7 @@ export const CATEGORIES = [
 //   message: '',
 //   type: 'melkesjokolade',
 //   category: '',
-//   price: 62.9,
+//   price: 71,
 //   image: '',
 // }
 
@@ -67,7 +67,7 @@ export const PRODUCTS = [
     message: 'Den som sender hjerter',
     type: 'melkesjokolade',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945d5eae4edea6640e61678',
   },
   {
@@ -75,7 +75,7 @@ export const PRODUCTS = [
     message: 'Den som inviterer',
     type: 'melkesjokolade',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945d5eae4edea6640e61684',
   },
   {
@@ -83,7 +83,7 @@ export const PRODUCTS = [
     message: 'Den som tok med gossip',
     type: 'melkesjokolade',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945d5eae4edea6640e61690',
   },
   {
@@ -91,7 +91,7 @@ export const PRODUCTS = [
     message: 'Den som passet hunden',
     type: 'melkesjokolade',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945d5eae4edea6640e6169c',
   },
   {
@@ -99,7 +99,7 @@ export const PRODUCTS = [
     message: 'Den som sa "jeg elsker deg" først',
     type: 'melkesjokolade',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945d9f2e4edea6640e61a63',
   },
   {
@@ -107,7 +107,7 @@ export const PRODUCTS = [
     message: 'Den som hadde helt rett',
     type: 'melkesjokolade',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945d9f2e4edea6640e61a6f',
   },
   {
@@ -115,7 +115,7 @@ export const PRODUCTS = [
     message: 'Til min bedre halvdel',
     type: 'melkesjokolade',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945d9f2e4edea6640e61a7b',
   },
   {
@@ -123,7 +123,7 @@ export const PRODUCTS = [
     message: 'I gode dager',
     type: 'melkesjokolade',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945d9f2e4edea6640e61a87',
   },
   {
@@ -131,7 +131,7 @@ export const PRODUCTS = [
     message: 'Verdens beste',
     type: 'melkesjokolade',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945d9f3e4edea6640e61a93',
   },
   {
@@ -139,7 +139,7 @@ export const PRODUCTS = [
     message: 'Den som bakte kake',
     type: 'melkesjokolade',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945dc07e4edea6640e61c41',
   },
   {
@@ -147,7 +147,7 @@ export const PRODUCTS = [
     message: 'Den som har bursdag',
     type: 'melkesjokolade',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945dc07e4edea6640e61c4d',
   },
   {
@@ -155,7 +155,7 @@ export const PRODUCTS = [
     message: 'Den som fikk frokost på senga',
     type: 'melkesjokolade',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945dc07e4edea6640e61c59',
   },
   {
@@ -163,7 +163,7 @@ export const PRODUCTS = [
     message: 'Verdens beste dame',
     type: 'melkesjokolade',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945dc07e4edea6640e61c65',
   },
   {
@@ -171,7 +171,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - morsdag',
     type: 'melkesjokolade',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945dc08e4edea6640e61c71',
   },
   {
@@ -179,7 +179,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - sønn',
     type: 'melkesjokolade',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945dc08e4edea6640e61c7d',
   },
   {
@@ -187,7 +187,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - datter',
     type: 'melkesjokolade',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945dc08e4edea6640e61c89',
   },
   {
@@ -195,7 +195,7 @@ export const PRODUCTS = [
     message: 'Den som hjelper med koftesølvet',
     type: 'melkesjokolade',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945dc08e4edea6640e61c95',
   },
   {
@@ -203,7 +203,7 @@ export const PRODUCTS = [
     message: 'Verdens beste kjæreste',
     type: 'melkesjokolade',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945dc08e4edea6640e61ca1',
   },
   {
@@ -211,7 +211,7 @@ export const PRODUCTS = [
     message: 'Det største konkurransemennesket',
     type: 'melkesjokolade',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945df53e4edea6640e61f19',
   },
   {
@@ -219,7 +219,7 @@ export const PRODUCTS = [
     message: 'Den som gjennomfører nyttårsforsettet',
     type: 'melkesjokolade',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945df53e4edea6640e61f25',
   },
   {
@@ -227,7 +227,7 @@ export const PRODUCTS = [
     message: 'Den som vant quizen',
     type: 'melkesjokolade',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945df53e4edea6640e61f31',
   },
   {
@@ -235,7 +235,7 @@ export const PRODUCTS = [
     message: 'Den som vant',
     type: 'melkesjokolade',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945df53e4edea6640e61f3d',
   },
   {
@@ -243,7 +243,7 @@ export const PRODUCTS = [
     message: 'Den som velger sport på tv`en',
     type: 'melkesjokolade',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945df53e4edea6640e61f49',
   },
   {
@@ -251,7 +251,7 @@ export const PRODUCTS = [
     message: 'Den som sender hjerter',
     type: 'daim',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945e5bbe4edea6640e62268',
   },
   {
@@ -259,7 +259,7 @@ export const PRODUCTS = [
     message: 'Den som inviterer',
     type: 'daim',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945e5bbe4edea6640e62274',
   },
   {
@@ -267,7 +267,7 @@ export const PRODUCTS = [
     message: 'Den som tok med gossip',
     type: 'daim',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945e5bbe4edea6640e62280',
   },
   {
@@ -275,7 +275,7 @@ export const PRODUCTS = [
     message: 'Den som passet hunden',
     type: 'daim',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945e5bbe4edea6640e6228c',
   },
   {
@@ -283,7 +283,7 @@ export const PRODUCTS = [
     message: 'Den som sa "jeg elsker deg" først',
     type: 'daim',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945e9e4e4edea6640e62539',
   },
   {
@@ -291,7 +291,7 @@ export const PRODUCTS = [
     message: 'Den som hadde helt rett',
     type: 'daim',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945e9e4e4edea6640e62545',
   },
   {
@@ -299,7 +299,7 @@ export const PRODUCTS = [
     message: 'Til min bedre halvdel',
     type: 'daim',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945e9e4e4edea6640e62551',
   },
   {
@@ -307,7 +307,7 @@ export const PRODUCTS = [
     message: 'I gode dager',
     type: 'daim',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945e9e4e4edea6640e6255d',
   },
   {
@@ -315,7 +315,7 @@ export const PRODUCTS = [
     message: 'Verdens beste',
     type: 'daim',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945e9e4e4edea6640e62569',
   },
   {
@@ -323,7 +323,7 @@ export const PRODUCTS = [
     message: 'Den som bakte kake',
     type: 'daim',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945eea2e4edea6640e6280f',
   },
   {
@@ -331,7 +331,7 @@ export const PRODUCTS = [
     message: 'Den som har bursdag',
     type: 'daim',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945eea2e4edea6640e6281b',
   },
   {
@@ -339,7 +339,7 @@ export const PRODUCTS = [
     message: 'Den som fikk frokost på senga',
     type: 'daim',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945eea2e4edea6640e62827',
   },
   {
@@ -347,7 +347,7 @@ export const PRODUCTS = [
     message: 'Verdens beste dame',
     type: 'daim',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945eea2e4edea6640e62833',
   },
   {
@@ -355,7 +355,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - morsdag',
     type: 'daim',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945eea3e4edea6640e6283f',
   },
   {
@@ -363,7 +363,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - sønn',
     type: 'daim',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945eea3e4edea6640e6284b',
   },
   {
@@ -371,7 +371,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - datter',
     type: 'daim',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945eea3e4edea6640e62857',
   },
   {
@@ -379,7 +379,7 @@ export const PRODUCTS = [
     message: 'Den som hjelper med koftesølvet',
     type: 'daim',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945eea3e4edea6640e62863',
   },
   {
@@ -387,7 +387,7 @@ export const PRODUCTS = [
     message: 'Verdens beste kjæreste',
     type: 'daim',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945eea3e4edea6640e6286f',
   },
   {
@@ -395,7 +395,7 @@ export const PRODUCTS = [
     message: 'Det største konkurransemennesket',
     type: 'daim',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f0cee4edea6640e62a56',
   },
   {
@@ -403,7 +403,7 @@ export const PRODUCTS = [
     message: 'Den som gjennomfører nyttårsforsettet',
     type: 'daim',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f0cee4edea6640e62a62',
   },
   {
@@ -411,7 +411,7 @@ export const PRODUCTS = [
     message: 'Den som vant quizen',
     type: 'daim',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f0cee4edea6640e62a6e',
   },
   {
@@ -419,7 +419,7 @@ export const PRODUCTS = [
     message: 'Den som vant',
     type: 'daim',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f0cee4edea6640e62a7a',
   },
   {
@@ -427,7 +427,7 @@ export const PRODUCTS = [
     message: 'Den som velger sport på tv`en',
     type: 'daim',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f0cee4edea6640e62a86',
   },
   {
@@ -435,7 +435,7 @@ export const PRODUCTS = [
     message: 'Den som sender hjerter',
     type: 'kvikklunsj',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f3a7e4edea6640e62b7a',
   },
   {
@@ -443,7 +443,7 @@ export const PRODUCTS = [
     message: 'Den som inviterer',
     type: 'kvikklunsj',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f3a7e4edea6640e62b86',
   },
   {
@@ -451,7 +451,7 @@ export const PRODUCTS = [
     message: 'Den som tok med gossip',
     type: 'kvikklunsj',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f3a7e4edea6640e62b92',
   },
   {
@@ -459,7 +459,7 @@ export const PRODUCTS = [
     message: 'Den som passet hunden',
     type: 'kvikklunsj',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f3a7e4edea6640e62b9e',
   },
   {
@@ -467,7 +467,7 @@ export const PRODUCTS = [
     message: 'Den som sa "jeg elsker deg" først',
     type: 'kvikklunsj',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f48be4edea6640e62cdf',
   },
   {
@@ -475,7 +475,7 @@ export const PRODUCTS = [
     message: 'Den som hadde helt rett',
     type: 'kvikklunsj',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f48be4edea6640e62ceb',
   },
   {
@@ -483,7 +483,7 @@ export const PRODUCTS = [
     message: 'Til min bedre halvdel',
     type: 'kvikklunsj',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f48be4edea6640e62cf7',
   },
   {
@@ -491,7 +491,7 @@ export const PRODUCTS = [
     message: 'I gode dager',
     type: 'kvikklunsj',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f48be4edea6640e62d03',
   },
   {
@@ -499,7 +499,7 @@ export const PRODUCTS = [
     message: 'Verdens beste',
     type: 'kvikklunsj',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f48be4edea6640e62d0f',
   },
   {
@@ -507,7 +507,7 @@ export const PRODUCTS = [
     message: 'Den som bakte kake',
     type: 'kvikklunsj',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f56fe4edea6640e62e38',
   },
   {
@@ -515,7 +515,7 @@ export const PRODUCTS = [
     message: 'Den som har bursdag',
     type: 'kvikklunsj',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f56fe4edea6640e62e44',
   },
   {
@@ -523,7 +523,7 @@ export const PRODUCTS = [
     message: 'Den som fikk frokost på senga',
     type: 'kvikklunsj',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f56fe4edea6640e62e50',
   },
   {
@@ -531,7 +531,7 @@ export const PRODUCTS = [
     message: 'Verdens beste dame',
     type: 'kvikklunsj',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f56fe4edea6640e62e5c',
   },
   {
@@ -539,7 +539,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - morsdag',
     type: 'kvikklunsj',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f56fe4edea6640e62e68',
   },
   {
@@ -547,7 +547,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - sønn',
     type: 'kvikklunsj',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f56fe4edea6640e62e74',
   },
   {
@@ -555,7 +555,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - datter',
     type: 'kvikklunsj',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f56fe4edea6640e62e80',
   },
   {
@@ -563,7 +563,7 @@ export const PRODUCTS = [
     message: 'Den som hjelper med koftesølvet',
     type: 'kvikklunsj',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f56fe4edea6640e62e8c',
   },
   {
@@ -571,7 +571,7 @@ export const PRODUCTS = [
     message: 'Verdens beste kjæreste',
     type: 'kvikklunsj',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f570e4edea6640e62e98',
   },
   {
@@ -579,7 +579,7 @@ export const PRODUCTS = [
     message: 'Det største konkurransemennesket',
     type: 'kvikklunsj',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f647e4edea6640e62ff9',
   },
   {
@@ -587,7 +587,7 @@ export const PRODUCTS = [
     message: 'Den som gjennomfører nyttårsforsettet',
     type: 'kvikklunsj',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f647e4edea6640e63005',
   },
   {
@@ -595,7 +595,7 @@ export const PRODUCTS = [
     message: 'Den som vant quizen',
     type: 'kvikklunsj',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f647e4edea6640e63011',
   },
   {
@@ -603,7 +603,7 @@ export const PRODUCTS = [
     message: 'Den som vant',
     type: 'kvikklunsj',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f647e4edea6640e6301d',
   },
   {
@@ -611,7 +611,7 @@ export const PRODUCTS = [
     message: 'Den som velger sport på tv`en',
     type: 'kvikklunsj',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f647e4edea6640e63029',
   },
   {
@@ -619,7 +619,7 @@ export const PRODUCTS = [
     message: 'Den som sender hjerter',
     type: 'firkløver',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f6ebe4edea6640e6310d',
   },
   {
@@ -627,7 +627,7 @@ export const PRODUCTS = [
     message: 'Den som inviterer',
     type: 'firkløver',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f6ebe4edea6640e63119',
   },
   {
@@ -635,7 +635,7 @@ export const PRODUCTS = [
     message: 'Den som tok med gossip',
     type: 'firkløver',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f6ece4edea6640e63125',
   },
   {
@@ -643,7 +643,7 @@ export const PRODUCTS = [
     message: 'Den som passet hunden',
     type: 'firkløver',
     category: 'familie',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f6ece4edea6640e63131',
   },
   {
@@ -651,7 +651,7 @@ export const PRODUCTS = [
     message: 'Den som sa "jeg elsker deg" først',
     type: 'firkløver',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f7b6e4edea6640e63224',
   },
   {
@@ -659,7 +659,7 @@ export const PRODUCTS = [
     message: 'Den som hadde helt rett',
     type: 'firkløver',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f7b6e4edea6640e63230',
   },
   {
@@ -667,7 +667,7 @@ export const PRODUCTS = [
     message: 'Til min bedre halvdel',
     type: 'firkløver',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f7b6e4edea6640e6323c',
   },
   {
@@ -675,7 +675,7 @@ export const PRODUCTS = [
     message: 'I gode dager',
     type: 'firkløver',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f7b7e4edea6640e63248',
   },
   {
@@ -683,7 +683,7 @@ export const PRODUCTS = [
     message: 'Verdens beste',
     type: 'firkløver',
     category: 'kjærlighet',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f8fae4edea6640e6336a',
   },
   {
@@ -691,7 +691,7 @@ export const PRODUCTS = [
     message: 'Den som bakte kake',
     type: 'firkløver',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f8fae4edea6640e63346',
   },
   {
@@ -699,7 +699,7 @@ export const PRODUCTS = [
     message: 'Den som har bursdag',
     type: 'firkløver',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f8fae4edea6640e63352',
   },
   {
@@ -707,7 +707,7 @@ export const PRODUCTS = [
     message: 'Den som fikk frokost på senga',
     type: 'firkløver',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f8fae4edea6640e6335e',
   },
   {
@@ -715,7 +715,7 @@ export const PRODUCTS = [
     message: 'Verdens beste dame',
     type: 'firkløver',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f7b7e4edea6640e63254',
   },
   {
@@ -723,7 +723,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - morsdag',
     type: 'firkløver',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f8fae4edea6640e63376',
   },
   {
@@ -731,7 +731,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - sønn',
     type: 'firkløver',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f8fae4edea6640e63382',
   },
   {
@@ -739,7 +739,7 @@ export const PRODUCTS = [
     message: 'Verdens beste mamma - datter',
     type: 'firkløver',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f8fae4edea6640e6338e',
   },
   {
@@ -747,7 +747,7 @@ export const PRODUCTS = [
     message: 'Den som hjelper med koftesølvet',
     type: 'firkløver',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f8fae4edea6640e6339a',
   },
   {
@@ -755,7 +755,7 @@ export const PRODUCTS = [
     message: 'Verdens beste kjæreste',
     type: 'firkløver',
     category: 'merkedager',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945f8fae4edea6640e633a6',
   },
   //----------------------------------------------------------
@@ -764,7 +764,7 @@ export const PRODUCTS = [
     message: 'Det største konkurransemennesket',
     type: 'firkløver',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945fa56e4edea6640e63499',
   },
   {
@@ -772,7 +772,7 @@ export const PRODUCTS = [
     message: 'Den som gjennomfører nyttårsforsettet',
     type: 'firkløver',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945fa56e4edea6640e634a5',
   },
   {
@@ -780,7 +780,7 @@ export const PRODUCTS = [
     message: 'Den som vant quizen',
     type: 'firkløver',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945fa56e4edea6640e634b1',
   },
   {
@@ -788,7 +788,7 @@ export const PRODUCTS = [
     message: 'Den som vant',
     type: 'firkløver',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945fa56e4edea6640e634bd',
   },
   {
@@ -796,7 +796,7 @@ export const PRODUCTS = [
     message: 'Den som velger sport på tv`en',
     type: 'firkløver',
     category: 'underholdning',
-    price: 62.9,
+    price: 71,
     image: 'https://assets.kvass.no/6945fa56e4edea6640e634c9',
   },
 ]
