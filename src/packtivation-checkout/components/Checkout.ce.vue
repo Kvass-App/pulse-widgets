@@ -11,20 +11,38 @@ const shoppingCart = ref(
 )
 
 const handleVippsClick = async () => {
-  // bus.emit('vipps:open')
+  // Check if total quantity exceeds 40
+  if (totalCartQuantity.value > 40) {
+    alert('Du kan ikke legge til mer enn 40 sjokolader i handlekurven. Kontakt oss på freia@pulse.no for større bestillinger.')
+    return
+  }
 
-  vippsbuttonPromise.value = new Promise((resolve) => {
-    setTimeout(() => {
-      resolve()
-    }, 2000)
-  })
+  bus.emit('vipps:open')
 
-  await vippsbuttonPromise.value
+  // vippsbuttonPromise.value = new Promise((resolve) => {
+  //   setTimeout(() => {
+  //     resolve()
+  //   }, 2000)
+  // })
 
-  window.location.href = '/confirmation'
+  // await vippsbuttonPromise.value
+
+  // window.location.href = '/confirmation'
+}
+
+const totalCartQuantity = computed(() => {
+  return shoppingCart.value.reduce((sum, item) => sum + item.quantity, 0)
+})
+
+const isIncrementDisabled = (productId) => {
+  return totalCartQuantity.value >= 40
 }
 
 const increaseQuantity = (id) => {
+  if (totalCartQuantity.value >= 40) {
+    alert('Du kan ikke legge til mer enn 40 sjokolader i handlekurven. Kontakt oss på freia@pulse.no for større bestillinger.')
+    return
+  }
   const product = shoppingCart.value.find((p) => p.id === id)
   if (product) product.quantity++
 }
@@ -61,7 +79,7 @@ const mvaAmount = computed(() => {
 })
 
 const shippingCost = computed(() => {
-  return 49
+  return 22.5
 })
 
 const totalPrice = computed(() => {
@@ -130,6 +148,7 @@ watch(
           <NumberInput
             class="cart__number-input"
             :units="product.quantity"
+            :disabled="isIncrementDisabled(product.id)"
             @update="
               (val) => (product.quantity = Math.max(1, parseInt(val) || 1))
             "

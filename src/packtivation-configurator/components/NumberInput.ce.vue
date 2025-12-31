@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ units: Number })
+const props = defineProps({ units: Number, disabled: Boolean })
 
 const emit = defineEmits(['update', 'decrement', 'increment'])
 </script>
@@ -26,6 +26,7 @@ const emit = defineEmits(['update', 'decrement', 'increment'])
       @click="$emit('increment')"
       class="numberinput__increment btn-reset"
       :style="{ color: 'rgba(143, 70, 40, 0.5)' }"
+      :disabled="disabled"
     >
       <span>+</span>
     </button>
@@ -88,6 +89,11 @@ input[type='number'] {
 
     &:active {
       background-color: rgba(237, 199, 0, 0.1);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
     }
   }
 }

@@ -22,6 +22,11 @@ const shoppingCart = ref(
 const currentSlide = ref(0)
 const quantity = ref(1)
 
+const showToast = ref(false)
+const toastMessage = ref('')
+const toastQuantity = ref(0)
+let toastTimeout = null
+
 const filteredProducts = computed(() => {
   return PRODUCTS.filter(
     (p) =>
@@ -31,6 +36,14 @@ const filteredProducts = computed(() => {
 
 const currentProduct = computed(() => {
   return filteredProducts.value[currentSlide.value]
+})
+
+const totalCartQuantity = computed(() => {
+  return shoppingCart.value.reduce((sum, item) => sum + item.quantity, 0)
+})
+
+const isIncrementDisabled = computed(() => {
+  return totalCartQuantity.value + quantity.value >= 40
 })
 
 const selectCategory = (id) => {
@@ -79,6 +92,15 @@ const addToCart = () => {
   addToCartPromise.value = new Promise((resolve) => {
     if (!currentProduct.value) return resolve()
 
+    // Check if adding this quantity would exceed the limit
+    const newTotal = totalCartQuantity.value + quantity.value
+    if (newTotal > 40) {
+      alert(
+        'Du kan ikke legge til mer enn 40 sjokolader i handlekurven. Kontakt oss på freia@pulse.no for større bestillinger.',
+      )
+      return resolve()
+    }
+
     const existing = shoppingCart.value.find(
       (item) => item.id === currentProduct.value.id,
     )
@@ -91,6 +113,19 @@ const addToCart = () => {
         quantity: quantity.value,
       })
     }
+
+    // Show toast notification
+    toastQuantity.value = quantity.value
+    toastMessage.value = currentProduct.value.message
+    showToast.value = true
+
+    if (toastTimeout) {
+      clearTimeout(toastTimeout)
+    }
+
+    toastTimeout = setTimeout(() => {
+      showToast.value = false
+    }, 3000)
 
     resolve()
   })
@@ -114,6 +149,21 @@ watch(
 
 <template>
   <div class="configurator">
+    <Transition name="toast">
+      <div v-if="showToast" class="configurator__toast">
+        <div class="configurator__toast-content">
+          <img
+            src="https://assets.kvass.no/693ab3690e3a17d84e5700dd"
+            alt="info-ikon"
+            class="configurator__toast-icon"
+          />
+          <p class="configurator__toast-text">
+            La til {{ toastQuantity }}x "{{ toastMessage }}" i handlekurven.
+          </p>
+        </div>
+      </div>
+    </Transition>
+
     <div>
       <h3>Steg 1: Velg smak</h3>
 
@@ -285,6 +335,7 @@ watch(
           <span :style="{ fontSize: '1rem', color: '#64748B' }">Antall:</span>
           <NumberInput
             :units="quantity"
+            :disabled="isIncrementDisabled"
             @update="(val) => (quantity = Math.max(1, parseInt(val) || 1))"
             @decrement="quantity > 1 && quantity--"
             @increment="quantity++"
@@ -801,6 +852,74 @@ watch(
     width: 24px;
     height: 24px;
   }
+
+  &__toast {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    max-width: 375px;
+
+    @media (max-width: $breakpoint) {
+      top: 1rem;
+      width: 90%;
+    }
+  }
+
+  &__toast-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background-color: rgba(215, 243, 222, 1);
+    border: 2px solid rgba(199, 165, 0, 0.3);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    @media (max-width: $breakpoint) {
+      padding: 0.75rem 1rem;
+      gap: 0.5rem;
+    }
+  }
+
+  &__toast-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+
+    @media (max-width: $breakpoint) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__toast-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #2d3748;
+    margin: 0;
+    text-align: left;
+
+    @media (max-width: $breakpoint) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.toast-enter-active,
+.toast-leave-active {
+  transition: all 0.3s ease;
+}
+
+.toast-enter-from {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-20px);
+}
+
+.toast-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-20px);
 }
 
 .btn-reset {
