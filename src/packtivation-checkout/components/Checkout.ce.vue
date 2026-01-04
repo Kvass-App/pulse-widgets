@@ -4,6 +4,8 @@ import { Icon, Button, Input, Flex } from '@kvass/ui'
 import { bus } from '../bus'
 import NumberInput from './NumberInput.ce.vue'
 
+const SHIPPING_COST_PER_UNIT = 22.5
+
 const vippsbuttonPromise = ref(null)
 
 const shoppingCart = ref(
@@ -13,21 +15,13 @@ const shoppingCart = ref(
 const handleVippsClick = async () => {
   // Check if total quantity exceeds 40
   if (totalCartQuantity.value > 40) {
-    alert('Du kan ikke legge til mer enn 40 sjokolader i handlekurven. Kontakt oss på freia@pulse.no for større bestillinger.')
+    alert(
+      'Du kan ikke legge til mer enn 40 sjokolader i handlekurven. Kontakt oss på freia@pulse.no for større bestillinger.',
+    )
     return
   }
 
   bus.emit('vipps:open')
-
-  // vippsbuttonPromise.value = new Promise((resolve) => {
-  //   setTimeout(() => {
-  //     resolve()
-  //   }, 2000)
-  // })
-
-  // await vippsbuttonPromise.value
-
-  // window.location.href = '/confirmation'
 }
 
 const totalCartQuantity = computed(() => {
@@ -40,7 +34,9 @@ const isIncrementDisabled = (productId) => {
 
 const increaseQuantity = (id) => {
   if (totalCartQuantity.value >= 40) {
-    alert('Du kan ikke legge til mer enn 40 sjokolader i handlekurven. Kontakt oss på freia@pulse.no for større bestillinger.')
+    alert(
+      'Du kan ikke legge til mer enn 40 sjokolader i handlekurven. Kontakt oss på freia@pulse.no for større bestillinger.',
+    )
     return
   }
   const product = shoppingCart.value.find((p) => p.id === id)
@@ -79,7 +75,7 @@ const mvaAmount = computed(() => {
 })
 
 const shippingCost = computed(() => {
-  return 22.5
+  return totalCartQuantity.value * SHIPPING_COST_PER_UNIT
 })
 
 const totalPrice = computed(() => {

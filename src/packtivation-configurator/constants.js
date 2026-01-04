@@ -52,15 +52,6 @@ export const CATEGORIES = [
   },
 ]
 
-// {
-//   id: '',
-//   message: '',
-//   type: 'melkesjokolade',
-//   category: '',
-//   price: 71,
-//   image: '',
-// }
-
 export const PRODUCTS = [
   {
     id: 'M04_Freia_200G_Packtivation_Melkesjokolade_EMOJI',
@@ -240,7 +231,7 @@ export const PRODUCTS = [
   },
   {
     id: 'M21_Freia_200G_Packtivation_Melkesjokolade_TV_SPORT',
-    message: 'Den som velger sport på tv`en',
+    message: 'Den som velger sport på tv’en',
     type: 'melkesjokolade',
     category: 'underholdning',
     price: 71,

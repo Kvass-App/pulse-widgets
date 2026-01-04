@@ -145,7 +145,8 @@ onMounted(async () => {
 
       <p>
         Din betaling er bekreftet og ordren er mottatt. Bekreftelse er sendt til
-        din e-post.
+        din e-post. Det beregnes 14 dager fra bestillingen er lagt inn til varen
+        blir sendt i posten.
       </p>
 
       <div class="confirmation__order-number">
