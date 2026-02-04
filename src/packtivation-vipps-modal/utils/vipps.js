@@ -1,10 +1,10 @@
 const convertOrderLines = (cartItems) => {
-  const TAX_RATE = 2500
+  const TAX_RATE = 1500
 
   const orderLines = cartItems.map((item) => {
     const priceInOre = item.price * 100
     const totalAmount = priceInOre * item.quantity
-    const totalAmountExcludingTax = totalAmount / 1.25
+    const totalAmountExcludingTax = Math.round(totalAmount / 1.15)
     const totalTaxAmount = totalAmount - totalAmountExcludingTax
 
     return {

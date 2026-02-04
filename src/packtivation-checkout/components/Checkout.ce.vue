@@ -82,6 +82,14 @@ const totalPrice = computed(() => {
   return cartTotalInclMva.value + shippingCost.value
 })
 
+const shippingExclMva = computed(() => {
+  return shippingCost.value / 1.25
+})
+
+const shippingMva = computed(() => {
+  return shippingCost.value - shippingExclMva.value
+})
+
 watch(
   shoppingCart,
   (newValue) => {
@@ -206,9 +214,16 @@ watch(
         </Flex>
 
         <Flex justify="space-between">
-          <span class="cart__order-line">Frakt</span
+          <span class="cart__order-line">Frakt (ekskl. mva.)</span
           ><span class="cart__order-line"
-            >{{ shippingCost.toFixed(2) }} kr.</span
+            >{{ shippingExclMva.toFixed(2) }} kr.</span
+          >
+        </Flex>
+
+        <Flex justify="space-between">
+          <span class="cart__order-line">Frakt MVA (25%)</span
+          ><span class="cart__order-line"
+            >{{ shippingMva.toFixed(2) }} kr.</span
           >
         </Flex>
       </div>
