@@ -67,7 +67,7 @@ const cartTotalInclMva = computed(() => {
 })
 
 const subtotalExclMva = computed(() => {
-  return cartTotalInclMva.value / 1.25
+  return cartTotalInclMva.value / 1.15
 })
 
 const mvaAmount = computed(() => {
@@ -201,7 +201,7 @@ watch(
         </Flex>
 
         <Flex justify="space-between">
-          <span class="cart__order-line">MVA (25%)</span
+          <span class="cart__order-line">MVA (15%)</span
           ><span class="cart__order-line">{{ mvaAmount.toFixed(2) }} kr.</span>
         </Flex>
 
@@ -366,7 +366,8 @@ watch(
 
     background-color: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0 1px 2px -1px rgba(0, 0, 0, 0.1),
       0 1px 3px 0 rgba(0, 0, 0, 0.1);
     padding: 2rem;
 
@@ -381,7 +382,8 @@ watch(
 
     background-color: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0 1px 2px -1px rgba(0, 0, 0, 0.1),
       0 1px 3px 0 rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
 
@@ -465,7 +467,8 @@ watch(
     text-align: start;
     background-color: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0 1px 2px -1px rgba(0, 0, 0, 0.1),
       0 1px 3px 0 rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     height: fit-content;
