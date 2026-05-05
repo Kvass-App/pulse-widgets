@@ -36,6 +36,9 @@ export default defineConfig({
         'packtivation-confirmation': fileURLToPath(
           new URL('./src/packtivation-confirmation/main.js', import.meta.url),
         ),
+        'frus-duel-map': fileURLToPath(
+          new URL('./src/frus-duel-map/main.js', import.meta.url),
+        ),
       },
     },
   },
