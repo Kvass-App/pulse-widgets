@@ -10,12 +10,12 @@ const votes = window.frusduellenMapData || {}
 //   'more-og-romsdal': { jordbaer: 60, ananas: 40 },
 //   innlandet: { jordbaer: 65, ananas: 35 },
 //   buskerud: { jordbaer: 40, ananas: 60 },
-//   vestland: { jordbaer: 35, ananas: 65 },
+//   vestland: { jordbaer: 50, ananas: 50 },
 //   oslo: { jordbaer: 50, ananas: 50 },
 //   akershus: { jordbaer: 55, ananas: 45 },
-//   rogaland: { jordbaer: 90, ananas: 10 },
-//   telemark: { jordbaer: 100, ananas: 0 },
-//   agder: { jordbaer: 0, ananas: 100 },
+//   rogaland: { jordbaer: 90, ananas: 50 },
+//   telemark: { jordbaer: 100, ananas: 150 },
+//   agder: { jordbaer: 0, ananas: 0 },
 //   vestfold: { jordbaer: 45, ananas: 55 },
 //   ostfold: { jordbaer: 52, ananas: 48 },
 // }
@@ -23,7 +23,8 @@ const votes = window.frusduellenMapData || {}
 // ===== Constants =====
 const COLOR_JORDBAER = '#E5004E'
 const COLOR_ANANAS = '#F6B901'
-const COLOR_NEUTRAL = '#999999'
+const COLOR_NO_VOTES = '#F4CFB5'
+const COLOR_TIE = 'url(#tie-gradient)'
 
 const BAR_TOTAL = 60
 const BAR_GAP = 2
@@ -31,10 +32,12 @@ const BAR_GAP = 2
 // ===== Helpers =====
 function leaderColor(fylke) {
   const v = votes[fylke]
-  if (!v) return COLOR_NEUTRAL
+  if (!v) return COLOR_NO_VOTES
+  const total = v.jordbaer + v.ananas
+  if (total === 0) return COLOR_NO_VOTES
   if (v.jordbaer > v.ananas) return COLOR_JORDBAER
   if (v.ananas > v.jordbaer) return COLOR_ANANAS
-  return COLOR_NEUTRAL
+  return COLOR_TIE
 }
 
 function jordbaerWidth(fylke) {
@@ -65,6 +68,12 @@ function ananasStart(fylke) {
 <template>
   <div class="duel-map">
     <svg viewBox="-200 0 899 1041" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="tie-gradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#E5004E" />
+          <stop offset="100%" stop-color="#F6B901" />
+        </linearGradient>
+      </defs>
       <g id="norway-map">
         <path
           id="agder"
