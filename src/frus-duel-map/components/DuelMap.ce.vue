@@ -26,7 +26,7 @@ const COLOR_ANANAS = '#F6B901'
 const COLOR_NO_VOTES = '#F4CFB5'
 const COLOR_TIE = 'url(#tie-gradient)'
 
-const BAR_TOTAL = 60
+const BAR_TOTAL = 120
 const BAR_GAP = 2
 
 // ===== Helpers =====
@@ -67,6 +67,16 @@ function ananasStart(fylke) {
 
 <template>
   <div class="duel-map">
+    <img
+      class="duel-map__bottle duel-map__bottle--left"
+      src="https://assets.kvass.no/69fc571762f849bd4b088378"
+      alt="Jordbær og granateple"
+    />
+    <img
+      class="duel-map__bottle duel-map__bottle--right"
+      src="https://assets.kvass.no/69fc571862f849bd4b088384"
+      alt="Ananas og eple"
+    />
     <svg viewBox="-200 0 899 1041" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="tie-gradient" x1="0" y1="0" x2="1" y2="0">
@@ -608,3 +618,53 @@ function ananasStart(fylke) {
     </svg>
   </div>
 </template>
+
+<style scoped>
+.duel-map {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.duel-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.duel-map__bottle {
+  position: absolute;
+  width: 185px;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.duel-map__bottle--left {
+  top: -3%;
+  left: 8%;
+}
+
+.duel-map__bottle--right {
+  top: 35%;
+  right: 4%;
+}
+
+@media (max-width: 1024px) {
+  .duel-map__bottle {
+    width: 22%;
+  }
+
+  .duel-map__bottle--left {
+    top: -5%;
+    left: 10%;
+  }
+
+  .duel-map__bottle--right {
+    top: 65%;
+    right: 5%;
+  }
+}
+</style>
