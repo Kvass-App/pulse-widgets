@@ -29,6 +29,18 @@ const COLOR_TIE = 'url(#tie-gradient)'
 const BAR_TOTAL = 120
 const BAR_GAP = 2
 
+// ===== Totals / percentages =====
+let totalJordbaer = 0
+let totalAnanas = 0
+Object.values(votes).forEach((v) => {
+  totalJordbaer += v.jordbaer || 0
+  totalAnanas += v.ananas || 0
+})
+const grandTotal = totalJordbaer + totalAnanas
+const jordbaerPercent =
+  grandTotal === 0 ? 50 : Math.round((totalJordbaer / grandTotal) * 100)
+const ananasPercent = grandTotal === 0 ? 50 : 100 - jordbaerPercent
+
 // ===== Helpers =====
 function leaderColor(fylke) {
   const v = votes[fylke]
@@ -67,6 +79,12 @@ function ananasStart(fylke) {
 
 <template>
   <div class="duel-map">
+    <p
+      class="frus-duel__percent frus-duel__percent--jordbar duel-map__percent duel-map__percent--left"
+      data-fruit="jordbaer"
+    >
+      {{ jordbaerPercent }}%
+    </p>
     <img
       class="duel-map__bottle duel-map__bottle--left"
       src="https://assets.kvass.no/69fc571762f849bd4b088378"
@@ -77,6 +95,12 @@ function ananasStart(fylke) {
       src="https://assets.kvass.no/69fc571862f849bd4b088384"
       alt="Ananas og eple"
     />
+    <p
+      class="frus-duel__percent frus-duel__percent--ananas duel-map__percent duel-map__percent--right"
+      data-fruit="ananas"
+    >
+      {{ ananasPercent }}%
+    </p>
     <svg viewBox="-200 0 899 1041" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="tie-gradient" x1="0" y1="0" x2="1" y2="0">
@@ -652,19 +676,58 @@ function ananasStart(fylke) {
   right: 4%;
 }
 
+.duel-map__percent {
+  position: absolute;
+  z-index: 3;
+  margin: 0;
+  font-family: 'AlrightSans-Regular', sans-serif;
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 1;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.duel-map__percent--left {
+  top: 14%;
+  left: -30px;
+  background-image: linear-gradient(to right, #e2001a, #ff5721);
+}
+
+.duel-map__percent--right {
+  top: 52%;
+  right: -75px;
+  background-image: linear-gradient(to right, #f6b903, #f68e09);
+}
+
 @media (max-width: 1024px) {
   .duel-map__bottle {
     width: 22%;
   }
 
+  .duel-map__percent {
+    font-size: 2rem;
+  }
+
   .duel-map__bottle--left {
     top: -5%;
-    left: 10%;
+    left: 2.5%;
   }
 
   .duel-map__bottle--right {
     top: 65%;
-    right: 5%;
+    right: 2.5%;
+  }
+
+  .duel-map__percent--left {
+    top: 9%;
+    left: 25%;
+  }
+
+  .duel-map__percent--right {
+    top: 85%;
+    right: 25%;
   }
 }
 </style>
